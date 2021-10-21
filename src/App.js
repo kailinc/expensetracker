@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import Dashboard from './Dashboard.js';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +17,11 @@ class App extends React.Component {
   render() {
     return(
       <div className="App">
-        <h1>Hello</h1>
+        <h1>Expense Tracker</h1>
+        <Dashboard
+          balance={this.state.balance}
+          income={this.state.income}
+          expense={this.state.expense}/>
       </div>
     )
   }
