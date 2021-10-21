@@ -9,6 +9,7 @@ class Form extends React.Component {
     }
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleNumChange = this.handleNumChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleTextChange(e) {
@@ -20,6 +21,14 @@ class Form extends React.Component {
   handleNumChange(e) {
     this.setState({
       amount: e.target.value
+    })
+  }
+
+  handleSubmit() {
+    this.props.onSubmit(this.state);
+    this.setState({
+      caption: '',
+      amount:0
     })
   }
 
@@ -44,7 +53,8 @@ class Form extends React.Component {
 
           <input
             type='button'
-            value='Submit'/>
+            value='Submit'
+            onClick={this.handleSubmit}/>
         </form>
       </div>
     );

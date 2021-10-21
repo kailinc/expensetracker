@@ -13,6 +13,16 @@ class App extends React.Component {
       income: 0,
       expense:0
     })
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(data) {
+    let res = [data['caption'], data['amount']];
+    let prev = [...this.state.history];
+    prev.push(res);
+    this.setState({
+      history: prev
+    });
   }
 
   render() {
@@ -24,7 +34,7 @@ class App extends React.Component {
           income={this.state.income}
           expense={this.state.expense}/>
         <History history={this.state.history}/>
-        <Form />
+        <Form onSubmit={this.handleSubmit}/>
       </div>
     )
   }
