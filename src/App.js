@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Dashboard from './Dashboard.js';
-
+import History from './History.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class App extends React.Component {
           balance={this.state.balance}
           income={this.state.income}
           expense={this.state.expense}/>
+        <History history={this.state.history}/>
       </div>
     )
   }
