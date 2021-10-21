@@ -25,11 +25,15 @@ class Form extends React.Component {
   }
 
   handleSubmit() {
-    this.props.onSubmit(this.state);
-    this.setState({
-      caption: '',
-      amount:0
-    })
+    if (this.state.amount !== 0) {
+      this.props.onSubmit(this.state);
+      this.setState({
+        caption: '',
+        amount:0
+      })
+    } else {
+      alert('Amount must not be 0!')
+    }
   }
 
   render() {
