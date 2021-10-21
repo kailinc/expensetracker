@@ -2,8 +2,22 @@ import React from 'react';
 
 class Transaction extends React.Component {
   render() {
+    let val = this.props.data[1] > 0 ? 'plus' : 'minus';
     return(
-      <li key={this.props.key}>{this.props.data}</li>
+      <div
+        className={'transaction ' + val}
+        key={this.props.key}>
+          <div className='left'>
+            <p>{this.props.data[0]}</p>
+          </div>
+
+          <div className='right'>
+            {this.props.data[1] > 0 ?
+            <p>${this.props.data[1]}</p> : <p>-${this.props.data[1] * -1}</p> }
+            <button>x</button>
+          </div>
+
+      </div>
     )
   }
 }

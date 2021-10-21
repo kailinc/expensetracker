@@ -31,10 +31,26 @@ h4 {
   margin: 5px 0;
 }
 
-.money.plus {
+.plus {
   color: #2ecc71;
 }
 
-.money.minus {
+.minus {
   color: #c0392b;
+}
+
+.transaction {
+  overflow: hidden;
+  padding: 4px;
+  background-color: white;
+  margin: 4px 0px;
+}
+
+.left{
+  float: left;
+  padding: 8px;
+}
+
+.right {
+  float: right;
 }
