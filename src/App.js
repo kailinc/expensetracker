@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = ({
-      history: [['app', 120], ['money', 12], ['text', -122]],
+      history: [],
       balance: 0,
       income: 0,
       expense:0
@@ -17,12 +17,23 @@ class App extends React.Component {
   }
 
   handleSubmit(data) {
-    let res = [data['caption'], data['amount']];
-    let prev = [...this.state.history];
-    prev.push(res);
+    let trans = [data['caption'], parseFloat(data['amount'])];
+    console.log(trans);
+    let resHistory = [...this.state.history];
+    resHistory.push(trans);
+
+    let resBalance = this.state.balance + trans[1];
+    let resIncome = trans[1] > 0 ? this.state.income + trans[1]: this.state.income;
+    let resExpense = trans[1] < 0 ? this.state.expense - trans[1]: this.state.expense;
+
     this.setState({
-      history: prev
+      history: resHistory,
+      balance: resBalance,
+      income: resIncome,
+      expense: resExpense
     });
+
+
   }
 
   render() {
