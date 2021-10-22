@@ -1,4 +1,5 @@
 import React from 'react';
+import format from './format.js';
 
 class Transaction extends React.Component {
   constructor(props) {
@@ -10,10 +11,8 @@ class Transaction extends React.Component {
     this.props.delete(this.props.id);
   }
   render() {
+    let amount = format(this.props.data[1])
     let val = this.props.data[1] > 0 ? 'plus' : 'minus';
-    // make sure the button works
-    // delete from history []
-    // delete from balance, income, expense
     return(
       <div className={'transaction ' + val}>
           <div className='left'>
@@ -21,8 +20,7 @@ class Transaction extends React.Component {
           </div>
 
           <div className='right'>
-            {this.props.data[1] > 0 ?
-            <p>${this.props.data[1]}</p> : <p>-${this.props.data[1] * -1}</p> }
+            <p>{amount}</p>
             <button onClick={this.handleClick}>x</button>
           </div>
 

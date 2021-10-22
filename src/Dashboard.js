@@ -6,8 +6,6 @@ class Dashboard extends React.Component {
     let balance = format(this.props.balance);
     let income = format(this.props.income);
     let expense = format(this.props.expense);
-
-
     return(
       <div>
         <h2>YOUR BALANCE</h2>
