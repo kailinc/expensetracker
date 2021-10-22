@@ -3,6 +3,9 @@ import React from 'react';
 class Transaction extends React.Component {
   render() {
     let val = this.props.data[1] > 0 ? 'plus' : 'minus';
+    // make sure the button works
+    // delete from history []
+    // delete from balance, income, expense
     return(
       <div
         className={'transaction ' + val}

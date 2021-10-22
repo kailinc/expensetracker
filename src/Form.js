@@ -25,14 +25,17 @@ class Form extends React.Component {
   }
 
   handleSubmit() {
-    if (this.state.amount !== 0) {
+    if (this.state.amount === 0) {
+      alert('Amout must not be 0!');
+    } else if (this.state.caption.length === 0) {
+      alert('You must have caption!');
+    }
+    else  {
       this.props.onSubmit(this.state);
       this.setState({
         caption: '',
         amount:0
       })
-    } else {
-      alert('Amount must not be 0!')
     }
   }
 
@@ -53,7 +56,9 @@ class Form extends React.Component {
           <input
             type='number'
             value={this.state.amount}
-            onChange={this.handleNumChange}/>
+            onChange={this.handleNumChange}
+            step="0.01"
+            placeholder="0.00"/>
 
           <input
             type='button'
