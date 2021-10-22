@@ -11,7 +11,7 @@ class History extends React.Component {
   renderHistory() {
     let history = this.props.history;
     let listItems = history.map((i,k) =>
-      <Transaction data={i} key={k}/>
+      <Transaction data={i} key={k} id={k} delete={(k) => this.props.onDelete(k)}/>
     );
     return (<div className="history">{listItems}</div>);
   }
