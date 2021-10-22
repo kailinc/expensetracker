@@ -13,6 +13,7 @@ h1 {
   letter-spacing: 1px;
   margin: 0;
   margin-bottom: 32px;
+  color: #9c88ff;
 }
 
 h2 {
@@ -48,7 +49,7 @@ h4 {
   overflow: hidden;
   padding: 8px 0px;
   background-color: white;
-  margin: 4px 0px;
+  margin: 8px 0px;
   height: 80px;
   width: 100%;
   border: 1px solid black;
@@ -82,4 +83,29 @@ h4 {
 
 .summary div:first-child {
   border-right: 1px solid grey;
+}
+
+form h4 {
+  margin-top: 18px;
+}
+
+form p {
+  line-height: 1px;
+}
+
+form input {
+  padding: 8px;
+  margin: 8px 0px;
+  width: 100%;
+  border: 1px solid grey;
+  margin-bottom: 30px;
+}
+
+
+form input:last-child {
+  background-color: #9c88ff;
+  color: white;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
 }

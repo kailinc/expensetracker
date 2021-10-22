@@ -42,16 +42,16 @@ class Form extends React.Component {
   render() {
     return(
       <div>
-        <h1>Add New Transaction</h1>
+        <h3>Add New Transaction</h3>
         <form>
-          <h3>Caption</h3>
+          <h4>Caption</h4>
           <input
             type='text'
             placeholder='Enter Your Caption Here'
             value={this.state.caption}
             onChange={this.handleTextChange}/>
 
-          <h3>Amount</h3>
+          <h4>Amount</h4>
           <p>Negative is expense. Positive is income</p>
           <input
             type='number'
@@ -62,7 +62,7 @@ class Form extends React.Component {
 
           <input
             type='button'
-            value='Submit'
+            value='Add Transaction'
             onClick={this.handleSubmit}/>
         </form>
       </div>
