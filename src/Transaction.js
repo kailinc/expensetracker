@@ -15,15 +15,14 @@ class Transaction extends React.Component {
     let val = this.props.data[1] > 0 ? 'plus' : 'minus';
     return(
       <div className={'transaction ' + val}>
-          <div className='left'>
+          <div>
             <p>{this.props.data[0]}</p>
           </div>
 
-          <div className='right'>
+          <div>
             <p>{amount}</p>
-            <button onClick={this.handleClick}>x</button>
+            <button onClick={this.handleClick}>Remove</button>
           </div>
-
       </div>
     )
   }
